@@ -11,9 +11,9 @@ The web application is composed of:
  3. _A database or files that store data (data = objects)_
  4. _An API that provides a communication interface between the front-end and your data (retrieve, create, delete, update them)_
 
- ![console image](https://user-images.githubusercontent.com/111267046/217175653-a1baa628-1aa2-40bb-a032-ff815e0f300d.png)
-
 **Description of the console**
+
+ ![console image](https://user-images.githubusercontent.com/111267046/217175653-a1baa628-1aa2-40bb-a032-ff815e0f300d.png)
 
   
   This is the initial stage of the project whereby we aim to establish a method for managing the objects to be used by our web page through the implementation of a database in JSON format. We will apply object-oriented programming, data translation with Python, and command-line logic, we aim to develop a local database that can be modified via commands.
