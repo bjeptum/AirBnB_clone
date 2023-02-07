@@ -3,7 +3,13 @@
 
 
 import cmd
+import json
 
 
 class HBNBCCommand(cmd.Cmd):
     """Class for the command interpreter"""
+
+
+
+if __name__ == '__main__':
+    HBNBCommand().cmdloop()
