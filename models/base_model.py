@@ -25,4 +25,7 @@ class BaseModel:
 
     def to_dict(self):
         """ Returns all keys/values of __dict__ of the instance"""
-        return self.__dict__
+        dict = self.__dict__.copy
+        dict['created_at'] = self.created_at.isoformat()
+        dict['updated_at'] = self.updated_at.isoformat()
+        return dict
