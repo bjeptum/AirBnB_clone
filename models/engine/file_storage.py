@@ -5,20 +5,28 @@ Filestorage module
 import json
 
 
+import json
+from models.base_model import BaseModel
+
 class FileStorage:
     """Serializes instances to a JSON file and
-    deserializes JSON file to instances"""
+    deserializes JSON file to instances
+    The abstracted storage module"""
     # Added private class attributes to the __init__ method
-    def __init__(self, __file_path, __objects):
-        self.__file_path = __file_path
-        self.__objects = __objects
+    __file_path = "file.json"
+    __objects = {}
 
     def all(self):
+<<<<<<< HEAD
         return self.__objects
+=======
+        """Returns the dictionaries"""
+        return (FileStorage.__objects)
+>>>>>>> 80e497fb9f2e3a4e5a6663791e4a58cbd982ca17
     
     def new(self, obj):
         """Sets in __objects the obj with key <obj class name>.id"""
-        return FileStorage.__objects
+        pass
 
     def save(self):
         """serializes __objects to the JSON file (path: __file_path)"""
