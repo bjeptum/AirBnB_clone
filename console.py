@@ -6,19 +6,20 @@ import cmd
 import json
 
 
-class HBNBCCommand(cmd.Cmd):
+class HBNBCommand(cmd.Cmd):
     """Class for the command interpreter"""
 
     prompt = "(hbnb)"
 
     def do_EOF(self, arg):
         """Handles End of File character."""
-        pass
+        print()
+        return True
 
     def do_quit(self, arg):
-        """Exits the program."""
-        pass
-    
+        """Quit command that Exits the program."""
+        return True
+
     def do_create(self, line):
         """Creates an instance."""
         if line == "" or line is None:
@@ -26,8 +27,11 @@ class HBNBCCommand(cmd.Cmd):
         elif line not in storage.classes():
             print("** class doesnt't exist **")
         else:
-            """If the line is in the storage class() method, create an instance\
-                    of the line and print the id"""
+            """
+            If the line is in the storage class() method,
+            create an instance
+            of the line and print the id
+            """
             new_instance = storage.classes()[line]()
             new_instance.save()
             print(new_instance.id)
