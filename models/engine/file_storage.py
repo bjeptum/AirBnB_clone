@@ -19,7 +19,7 @@ class FileStorage:
     def all(self):
         """Returns the dictionaries"""
         return (FileStorage.__objects)
-    
+
     def new(self, obj):
         """Sets in __objects the obj with key <obj class name>.id"""
         # the object type = self.__class__.__name__
@@ -27,10 +27,11 @@ class FileStorage:
         FileStorage.__objects[key] = obj
 
     def save(self):
-        """serializes __objects to the JSON file (path: __file_path)"""
-        #Create a new dictionary from the object stored in FileStorage.__objects dict
-        #The new dict contains key-value pairs, where the key is the same as the FileStorage.__objects dict
-        #The result is a dict, with the same key as FileStorage.__objects dict
+        # Create a new dictionary from the object stored in
+        # FileStorage.__objects dict
+        # The new dict contains key-value pairs, where the key
+        # is the same as the FileStorage.__objects dict
+        # The result is a dict, with the same key as FileStorage.__objects dict
         # but with vaues converted to dict
         new_dict = {}
         for key, value in FileStorage.__objects.items():
@@ -38,13 +39,11 @@ class FileStorage:
             with open(FileStorage.__file_path, "w", encoding="utf-8") as ofile:
                 json.dump(new_dict, ofile)
 
-
     def reload(self):
         """deserializes the JSON file """
         try:
             with open(FileStorage.__file_path, 'r') as ofile:
                 new_dict = json.load(ofile)
-                #iterate through the values of the JSON and sets class name and values
                 for key, value in new_dict.items():
                     class_name = value.get('__class__')
                     obj = eval(class_name + '(**value)')
