@@ -3,6 +3,9 @@
 
 
 import cmd
+from models.base_model import BaseModel
+import models
+from models.engine.file_storage import FileStorage
 import json
 
 
@@ -10,6 +13,7 @@ class HBNBCommand(cmd.Cmd):
     """Class for the command interpreter"""
 
     prompt = "(hbnb)"
+    storage = FileStorage()
 
     def do_EOF(self, arg):
         """Handles End of File character."""
@@ -20,54 +24,78 @@ class HBNBCommand(cmd.Cmd):
         """Quit command that Exits the program."""
         return True
 
-    def do_create(self, line):
+    def do_create(self, arg):
         """Creates an instance."""
-        if line == "" or line is None:
-            print("** class name missing **")
-        elif line not in storage.classes():
-            print("** class doesnt't exist **")
-        else:
-            """
-            If the line is in the storage class() method,
-            create an instance
-            of the line and print the id
-            """
-            new_instance = storage.classes()[line]()
-            new_instance.save()
-            print(new_instance.id)
-
-    def do_show(self, line):
-        """Prints the string representtation of an instance."""
-        """
-        if line == "" or line is None:
+        if not arg:
             print("** class name missing **")
             return
-        line = line.split()
-        if len(line) == 1:
+        try:
+            class_ = eval(arg)
+            if issubclass(class_, BaseModel):
+                new_instance = class_()
+                HBNBCommand.storage.new(new_instance)
+                HBNBCommand.storage.save()
+                print(new_instance.id)
+            else:
+                raise NameError
+        except NameError:
+            print("** class doesn't exist **")
+
+    def do_show(self, arg):
+        """Prints the string representtation of an instance."""
+        if not arg:
+            print("** class name missing **")
+            return
+        args = arg.split()
+        if len(args) < 2:
             print("** instance id missing **")
             return
-        class_name = line[0]
-        class_id = line[1]
-        if class_name not in model.storage.all():
+        try:
+            class_ = eval(args[0])
+            if issubclass(class_, BaseModel):
+                key = "{}.{}".format(args[0]. args[1])
+                if key in HBNCommand.storage.all().keys():
+                    print(HBNCommand.storage.all()[key])
+                else:
+                    print("** no instance found **")
+            else:
+                raise NameError
+        except NameError:
             print("** class doesn't exist **")
-            return
-        instances = models.storage.all()[class_name]
-        if class_id not in instances:
-            print("** no instance found **")
-            return
-        print(instances[class_id]
-        """
 
     def do_destroy(self, arg):
-        """Deletes an instance based on the class name and id"""
-        pass
+        if not arg:
+            print("** class name missing **")
+            return
+        args = arg.split()
+        if len(args) < 2:
+            print("** instance id missing **")
+            return
+        try:
+            class_ = eval(args[0])
+            if issubclass(class_. BaseModel):
+                key = "{}.{}".format(args[0], args[1])
+                if key in HBNBCommand.storage.all().keys():
+                    del HBNBCommand.storage.all()[key]
+                    HBNBCommand.storage.save()
+                else:
+                    print("** no instance found **")
+            else:
+                raise NameError
+        except NameError:
+            print("** class doesn't exist **")
 
     def do_all(self, arg):
-        """Prints all string representation of all instance."""
-        pass
-
-    def do_update(self, arg):
-        pass
+        if arg:
+            if arg not in globals():
+                print("** class doesn't exist **")
+            else:
+                instances = [str(instance) for instance
+                             in storage.all().values()
+                             if type(instance).__name__ == arg]
+                print(instances)
+        else:
+            print([str(instance) for instance in storage.all().values()])
 
 
 if __name__ == '__main__':
