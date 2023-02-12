@@ -64,6 +64,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
 
     def do_destroy(self, arg):
+        """Deletes an instance based on the class name and id"""
         if not arg:
             print("** class name missing **")
             return
@@ -86,6 +87,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
 
     def do_all(self, arg):
+        """Prints all string representation of all instances"""
         if arg:
             if arg not in globals():
                 print("** class doesn't exist **")
@@ -96,6 +98,10 @@ class HBNBCommand(cmd.Cmd):
                 print(instances)
         else:
             print([str(instance) for instance in storage.all().values()])
+
+    def do_update(self, arg):
+        """Adds and updates attribute to an instance"""
+        pass
 
 
 if __name__ == '__main__':
