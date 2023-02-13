@@ -5,7 +5,7 @@
 import cmd
 from models.base_model import BaseModel
 import models
-from models.base_model import BaseModel
+from models import storage
 from models.user import User
 from models.state import State
 from models.city import City
@@ -20,13 +20,13 @@ class HBNBCommand(cmd.Cmd):
 
     prompt = "(hbnb)"
     class_names = [
-            'BaseModel'
-            'User'
-            'State'
-            'City'
-            'Amenity'
-            'Place'
-            'Review'
+            BaseModel,
+            User,
+            State,
+            City,
+            Amenity,
+            Place,
+            Review
             ]
 
     def do_EOF(self, arg):
@@ -45,7 +45,7 @@ class HBNBCommand(cmd.Cmd):
             return
         try:
             class_ = eval(arg)
-            if issubclass(class_, class_names):
+            if issubclass(class_, BaseModel):
                 new_instance = class_()
                 storage.new(new_instance)
                 storage.save()
@@ -66,7 +66,7 @@ class HBNBCommand(cmd.Cmd):
             return
         try:
             class_ = eval(args[0])
-            if issubclass(class_, class_names):
+            if issubclass(class_, BaseModel):
                 key = "{}.{}".format(args[0], args[1])
                 if key in storage.all().keys():
                     print(storage.all()[key])
@@ -88,7 +88,7 @@ class HBNBCommand(cmd.Cmd):
             return
         try:
             class_ = eval(args[0])
-            if issubclass(class_, class_names):
+            if issubclass(class_, BaseModel):
                 key = "{}.{}".format(args[0], args[1])
                 if key in storage.all().keys():
                     del storage.all()[key]
@@ -124,7 +124,7 @@ class HBNBCommand(cmd.Cmd):
             return
         try:
             class_ = eval(args[0])
-            if issubclass(class_, class_names):
+            if issubclass(class_, BaseModel):
                 key = "{}.{}".format(args[0], args[1])
                 if key in storage.all().keys():
                     if len(args) < 3:
