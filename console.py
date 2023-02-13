@@ -6,6 +6,12 @@ import cmd
 from models.base_model import BaseModel
 import models
 from models import storage
+from models import user
+from models import state
+from models import city
+from models import amenity
+from models import place
+from models import review
 import json
 
 
@@ -13,6 +19,15 @@ class HBNBCommand(cmd.Cmd):
     """Class for the command interpreter"""
 
     prompt = "(hbnb)"
+    class_names = [
+            'BaseModel'
+            'User'
+            'State'
+            'City'
+            'Amenity'
+            'Place'
+            'Review'
+            ]
 
     def do_EOF(self, arg):
         """Handles End of File character."""
@@ -30,7 +45,7 @@ class HBNBCommand(cmd.Cmd):
             return
         try:
             class_ = eval(arg)
-            if issubclass(class_, BaseModel):
+            if issubclass(class_, class_names):
                 new_instance = class_()
                 storage.new(new_instance)
                 storage.save()
@@ -51,7 +66,7 @@ class HBNBCommand(cmd.Cmd):
             return
         try:
             class_ = eval(args[0])
-            if issubclass(class_, BaseModel):
+            if issubclass(class_, class_names):
                 key = "{}.{}".format(args[0], args[1])
                 if key in storage.all().keys():
                     print(storage.all()[key])
@@ -73,7 +88,7 @@ class HBNBCommand(cmd.Cmd):
             return
         try:
             class_ = eval(args[0])
-            if issubclass(class_, BaseModel):
+            if issubclass(class_, class_names):
                 key = "{}.{}".format(args[0], args[1])
                 if key in storage.all().keys():
                     del storage.all()[key]
@@ -109,7 +124,7 @@ class HBNBCommand(cmd.Cmd):
             return
         try:
             class_ = eval(args[0])
-            if issubclass(class_, BaseModel):
+            if issubclass(class_, class_names):
                 key = "{}.{}".format(args[0], args[1])
                 if key in storage.all().keys():
                     if len(args) < 3:
