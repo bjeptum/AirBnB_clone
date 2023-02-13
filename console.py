@@ -5,7 +5,7 @@
 import cmd
 from models.base_model import BaseModel
 import models
-from models.engine.file_storage import FileStorage
+from models import storage
 import json
 
 
@@ -13,7 +13,6 @@ class HBNBCommand(cmd.Cmd):
     """Class for the command interpreter"""
 
     prompt = "(hbnb)"
-    storage = FileStorage()
 
     def do_EOF(self, arg):
         """Handles End of File character."""
@@ -33,8 +32,8 @@ class HBNBCommand(cmd.Cmd):
             class_ = eval(arg)
             if issubclass(class_, BaseModel):
                 new_instance = class_()
-                HBNBCommand.storage.new(new_instance)
-                HBNBCommand.storage.save()
+                storage.new(new_instance)
+                storage.save()
                 print(new_instance.id)
             else:
                 raise NameError
@@ -53,9 +52,9 @@ class HBNBCommand(cmd.Cmd):
         try:
             class_ = eval(args[0])
             if issubclass(class_, BaseModel):
-                key = "{}.{}".format(args[0]. args[1])
-                if key in HBNCommand.storage.all().keys():
-                    print(HBNCommand.storage.all()[key])
+                key = "{}.{}".format(args[0], args[1])
+                if key in storage.all().keys():
+                    print(storage.all()[key])
                 else:
                     print("** no instance found **")
             else:
@@ -74,11 +73,11 @@ class HBNBCommand(cmd.Cmd):
             return
         try:
             class_ = eval(args[0])
-            if issubclass(class_. BaseModel):
+            if issubclass(class_, BaseModel):
                 key = "{}.{}".format(args[0], args[1])
-                if key in HBNBCommand.storage.all().keys():
-                    del HBNBCommand.storage.all()[key]
-                    HBNBCommand.storage.save()
+                if key in storage.all().keys():
+                    del storage.all()[key]
+                    storage.save()
                 else:
                     print("** no instance found **")
             else:
