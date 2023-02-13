@@ -2,6 +2,9 @@
 """This module creates a user class"""
 
 
+from models.base_model import BaseModel
+
+
 class Review(BaseModel):
     """Class for managing Review objects"""
 
