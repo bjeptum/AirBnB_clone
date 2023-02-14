@@ -5,6 +5,14 @@
 Test Cases for the BaseModel
 """
 
+<<<<<<< HEAD
+import os
+import unitest
+from models.base_model import BaseModel
+import models
+from datetime import datetime
+from time import sleep
+=======
 import unittest
 import os
 import sys
@@ -15,6 +23,7 @@ from models.base_model import BaseModel
 from models import storage
 
 
+>>>>>>> f5c706bf15ce28606d4ecb5d5e6b92a3b6a25e35
 
 class TestBaseModel(unittest.TestCase):
 
@@ -57,7 +66,10 @@ class TestBaseModel(unittest.TestCase):
         self.assertTrue(bm.id)
         self.assertTrue(bm.created_at)
         self.assertTrue(bm.updated_at)
+<<<<<<< HEAD
+=======
 
+>>>>>>> f5c706bf15ce28606d4ecb5d5e6b92a3b6a25e35
     def test_two_models_different_created_at(self):
         bm1 = BaseModel()
         time.sleep(0.05)
