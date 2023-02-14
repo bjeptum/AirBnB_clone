@@ -25,8 +25,12 @@ my_model.save()
 print(my_model)
 """
 
+import os
 import unitest
 from models.base_model import BaseModel
+import models
+from datetime import datetime
+from time import sleep
 
 class TestBaseModel(unittest.TestCase):
 
@@ -69,7 +73,7 @@ class TestBaseModel(unittest.TestCase):
         self.assertTrue(bm.id)
         self.assertTrue(bm.created_at)
         self.assertTrue(bm.updated_at)
-def test_two_models_different_created_at(self):
+    def test_two_models_different_created_at(self):
         bm1 = BaseModel()
         sleep(0.05)
         bm2 = BaseModel()
