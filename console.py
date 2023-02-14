@@ -38,6 +38,10 @@ class HBNBCommand(cmd.Cmd):
         """Quit command that Exits the program."""
         return True
 
+    def emptyline(self):
+        """Do nothing on empty line"""
+        pass
+
     def do_create(self, arg):
         """Creates an instance."""
         if not arg:
