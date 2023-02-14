@@ -26,6 +26,7 @@ class BaseModel:
             models.storage.new(self)
 
     def __str__(self):
+        """Returns string representation of instance"""
         return '[{}] ({}) {}'.format(self.__class__.__name__,
                                      self.id, self.__dict__)
 
