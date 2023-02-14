@@ -51,7 +51,7 @@ class HBNBCommand(cmd.Cmd):
             class_ = eval(arg)
             if issubclass(class_, BaseModel):
                 new_instance = class_()
-                storage.new(new_instance)
+                #storage.new(new_instance)
                 storage.save()
                 print(new_instance.id)
             else:
