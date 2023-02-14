@@ -90,19 +90,15 @@ class HBNBCommand(cmd.Cmd):
         if len(args) < 2:
             print("** instance id missing **")
             return
-        try:
-            class_ = eval(args[0])
-            if issubclass(class_, BaseModel):
-                key = "{}.{}".format(args[0], args[1])
-                if key in storage.all().keys():
-                    del storage.all()[key]
-                    storage.save()
-                else:
-                    print("** no instance found **")
+        class_ = eval(args[0])
+        if issubclass(class_, BaseModel):
+            key = "{}.{}".format(args[0], args[1])
+            if key in storage.all().keys():
+                del storage.all()[key]
+                storage.save()
             else:
-                raise NameError
-        except NameError:
-            print("** class doesn't exist **")
+                print("** no instance found **")
+                return
 
     def do_all(self, arg):
         """Prints all string representation of all instances"""
