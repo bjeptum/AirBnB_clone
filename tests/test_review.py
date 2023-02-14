@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Module for test Review class"""
+"""Test Review class Module"""
+
+
 import unittest
 import json
 import pep8
@@ -44,6 +46,7 @@ class TestReview(unittest.TestCase):
             self.assertIsInstance(Review.place_id, str)
             self.assertIsInstance(Review.user_id, str)
             self.assertIsInstance(Review.text, str)
+
 
 if __name__ == '__main__':
     unittest.main()

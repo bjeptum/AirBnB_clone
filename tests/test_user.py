@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """Module for test User class"""
+
+
 import unittest
 import json
 import pep8
@@ -45,6 +47,7 @@ class TestUser(unittest.TestCase):
             self.assertIsInstance(User.password, str)
             self.assertIsInstance(User.first_name, str)
             self.assertIsInstance(User.last_name, str)
+
 
 if __name__ == '__main__':
     unittest.main()

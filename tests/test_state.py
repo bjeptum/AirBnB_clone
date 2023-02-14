@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """Module for test State class"""
+
+
 import unittest
 import json
 import pep8
@@ -42,6 +44,7 @@ class TestState(unittest.TestCase):
 
         with self.subTest(msg='Attributes'):
             self.assertIsInstance(State.name, str)
+
 
 if __name__ == '__main__':
     unittest.main()

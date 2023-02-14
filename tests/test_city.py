@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Module for test City class"""
+"""City class test module"""
+
+
 import unittest
 import json
 import pep8

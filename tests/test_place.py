@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """Test Place class module"""
+
+
 import unittest
 import json
 import pep8
@@ -52,6 +54,7 @@ class TestPlace(unittest.TestCase):
             self.assertIsInstance(Place.latitude, float)
             self.assertIsInstance(Place.longitude, float)
             self.assertIsInstance(Place.amenity_ids, list)
+
 
 if __name__ == '__main__':
     unittest.main()
