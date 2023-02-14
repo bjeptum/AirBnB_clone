@@ -6,7 +6,10 @@ Test Cases for the BaseModel
 """
 
 import unittest
+import datetime
 from models.base_model import BaseModel
+from models import storage
+
 
 
 class TestBaseModel(unittest.TestCase):
@@ -203,5 +206,5 @@ class TestBaseModel_to_dict(unittest.TestCase):
             bm.to_dict(None)
 
 
-if __name__ = "__main__":
+if __name__ == "__main__":
     unittest.main()
