@@ -38,6 +38,10 @@ class HBNBCommand(cmd.Cmd):
         """Quit command that Exits the program."""
         return True
 
+    def emptyline(self):
+        """Do nothing on empty line"""
+        pass
+
     def do_create(self, arg):
         """Creates an instance."""
         if not arg:
@@ -47,7 +51,7 @@ class HBNBCommand(cmd.Cmd):
             class_ = eval(arg)
             if issubclass(class_, BaseModel):
                 new_instance = class_()
-                storage.new(new_instance)
+                #storage.new(new_instance)
                 storage.save()
                 print(new_instance.id)
             else:
@@ -86,19 +90,15 @@ class HBNBCommand(cmd.Cmd):
         if len(args) < 2:
             print("** instance id missing **")
             return
-        try:
-            class_ = eval(args[0])
-            if issubclass(class_, BaseModel):
-                key = "{}.{}".format(args[0], args[1])
-                if key in storage.all().keys():
-                    del storage.all()[key]
-                    storage.save()
-                else:
-                    print("** no instance found **")
+        class_ = eval(args[0])
+        if issubclass(class_, BaseModel):
+            key = "{}.{}".format(args[0], args[1])
+            if key in storage.all().keys():
+                del storage.all()[key]
+                storage.save()
             else:
-                raise NameError
-        except NameError:
-            print("** class doesn't exist **")
+                print("** no instance found **")
+                return
 
     def do_all(self, arg):
         """Prints all string representation of all instances"""

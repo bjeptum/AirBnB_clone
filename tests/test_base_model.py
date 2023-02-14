@@ -2,35 +2,24 @@
 
 
 """
-import sys
-import os
-
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-sys.path.append(os.path.dirname(SCRIPT_DIR))
-
-from models import storage
-from models.base_model import BaseModel
-
-all_objs = storage.all()
-print("-- Reloaded objects --")
-for obj_id in all_objs.keys():
-    obj = all_objs[obj_id]
-    print(obj)
-
-print("-- Create a new object --")
-my_model = BaseModel()
-my_model.name = "My_First_Model"
-my_model.my_number = 89
-my_model.save()
-print(my_model)
+Test Cases for the BaseModel
 """
 
+<<<<<<< HEAD
 import os
 import unitest
 from models.base_model import BaseModel
 import models
 from datetime import datetime
 from time import sleep
+=======
+import unittest
+import datetime
+from models.base_model import BaseModel
+from models import storage
+
+
+>>>>>>> f5c706bf15ce28606d4ecb5d5e6b92a3b6a25e35
 
 class TestBaseModel(unittest.TestCase):
 
@@ -61,7 +50,7 @@ class TestBaseModel(unittest.TestCase):
     def test_updated_at_is_public_datetime(self):
         bm = BaseModel
         self.assertEqual(datetime, type(BaseModel().updated_at))
-    
+
     def test_instance_save(self):
         bm = BaseModel()
         bm = bm.to_dict()
@@ -73,6 +62,10 @@ class TestBaseModel(unittest.TestCase):
         self.assertTrue(bm.id)
         self.assertTrue(bm.created_at)
         self.assertTrue(bm.updated_at)
+<<<<<<< HEAD
+=======
+
+>>>>>>> f5c706bf15ce28606d4ecb5d5e6b92a3b6a25e35
     def test_two_models_different_created_at(self):
         bm1 = BaseModel()
         sleep(0.05)
@@ -224,5 +217,6 @@ class TestBaseModel_to_dict(unittest.TestCase):
         with self.assertRaises(TypeError):
             bm.to_dict(None)
 
-if __name__ = "__main__":
+
+if __name__ == "__main__":
     unittest.main()
