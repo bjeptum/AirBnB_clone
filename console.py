@@ -87,7 +87,7 @@ class HBNBCommand(cmd.Cmd):
         if len(args) == 0:
             print("** class name missing **")
             return
-        if len(args) < 2:
+        if len(args) <= 1:
             print("** instance id missing **")
             return
         class_ = eval(args[0])
