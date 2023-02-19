@@ -93,7 +93,7 @@ class HBNBCommand(cmd.Cmd):
         class_ = eval(args[0])
         if issubclass(class_, BaseModel):
             key = "{}.{}".format(args[0], args[1])
-            if key in storage.all().keys():
+            if key in storage.all():
                 del storage.all()[key]
                 storage.save()
             else:
