@@ -90,6 +90,7 @@ class HBNBCommand(cmd.Cmd):
         if len(args) <= 1:
             print("** instance id missing **")
             return
+        storage.reload()
         class_ = eval(args[0])
         if issubclass(class_, BaseModel):
             key = "{}.{}".format(args[0], args[1])
