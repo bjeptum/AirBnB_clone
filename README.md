@@ -28,7 +28,7 @@ The web application is composed of:
  
  To have access to the console use the following command:
 
- git@github.com:bjeptum/AirBnB_clone.git
+ git clone git@github.com:bjeptum/AirBnB_clone.git
   
  **Run**
   
