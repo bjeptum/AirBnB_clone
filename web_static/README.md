@@ -11,8 +11,11 @@ During this project we will create:
  - Fake contents
  - No Javascript
  - No data loaded from anything
+ 
+ 
 
 **Requirements**
+
 ***General:***
 - Allowed editors: vi, vim, emacs
 - All your files should end with a new line
