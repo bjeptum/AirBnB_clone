@@ -12,7 +12,7 @@ During this project we will create:
  - No Javascript
  - No data loaded from anything
  
-
+![webstatic.png](/home/strongestavenger/Pictures/webstatic.png)
 
 **Requirements**
 
