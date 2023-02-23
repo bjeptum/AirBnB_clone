@@ -2,6 +2,7 @@ div.container {
   max-width: 1000px;
   margin: 30px auto;
   text-align: center;
+  padding: 100px;
 }
 .filters {
     background-color: white;
@@ -42,6 +43,7 @@ div.container {
     top: 0px;
     margin: 0;
     font-size: 24px;
+    padding: 50px;
 }
 
 .locations h4, .amenities h4 {
