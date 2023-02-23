@@ -78,7 +78,7 @@ div.locations {
 
 .locations:hover .popover {
     display: block;
-    padding-left: 18px;
+    padding-bottom: 18px;
 }
 
 .amenities:hover .popover {
