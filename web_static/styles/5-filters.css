@@ -34,7 +34,7 @@ div.container {
     width: 25%;
     border-right: 1px solid #DDDDDD;
     line-height: 100%;
-
+}
 .locations h3, .amenities h3 {
     position: absolute;
     font-weight: 600;
@@ -51,3 +51,4 @@ div.container {
     left: 50px;
     margin: 10px 0 0 0;
     font-size: 16px;
+}
