@@ -1,34 +1,54 @@
+div.container {
+  max-width: 1000px;
+  margin: 30px auto;
+  text-align: center;
+}
 .filters {
-display: flex;
-justify-content: space-between;
-align-items: center;
-margin-top: 20px;
+  background-color: white;
+  height: 70px;
+  width: 100%;
+  border: 1px solid #DDDDDD;
+  border-radius: 4px;
+  position: relative;
 }
-
 .filters button {
-background-color: #333333;
-color: #FFFFFF;
-border: none;
-border-radius: 5px;
-padding: 10px 20px;
-font-size: 16px;
-cursor: pointer;
+  font-size: 18px;
+  background-color: #FF5A5F;
+  color: #FFFFFF;
+  height: 48px;
+  width: 20%;
+  border: none;
+  border-radius: 4px;
+  float: right;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
 }
-
+.filters button:hover {
+  opacity: 90%;
+  }
 .locations, .amenities {
-display: flex;
-flex-direction: column;
-justify-content: flex-start;
-align-items: flex-start;
-padding: 20px;
-}
+    position: absolute;
+    height: 100%;
+    width: 25%;
+    border-right: 1px solid #DDDDDD;
+    line-height: 100%;
 
 .locations h3, .amenities h3 {
-margin: 0;
-font-size: 24px;
+    position: absolute;
+    font-weight: 600;
+    left: 50px;
+    top: 0px;
+    margin: 0;
+    font-size: 24px;
 }
 
 .locations h4, .amenities h4 {
-margin: 10px 0 0 0;
-font-size: 16px;
+    position: absolute;
+    font-weight: 400;
+    top: 22px;
+    left: 50px;
+    margin: 10px 0 0 0;
+    font-size: 16px;
 }
