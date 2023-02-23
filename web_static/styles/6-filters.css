@@ -37,6 +37,11 @@ div.locations {
     border-right: 1px solid #DDDDDD;
     line-height: 100%;
 }
+.amenities {
+    height: 100%;
+    width: 25%;
+    text-align: left;
+}
 .filters h3{
     padding-left: 50px;
     padding-top: 10px;
