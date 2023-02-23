@@ -29,9 +29,11 @@ section.filters button:hover {
   opacity: 90%;
   }
 div.locations {
-    position: absolute;
+    position: relative;
     height: 100%;
     width: 25%;
+    text-align: left;
+    order: o;
     border-right: 1px solid #DDDDDD;
     line-height: 100%;
 }
@@ -47,22 +49,38 @@ div.locations {
     margin: 5px;
     padding-left: 40px;
 }
-nav {
-float: right;
+.popover {
+    display: none;
+    background-color: #FAFAFA;
+    width: 292px;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    margin-left: -41px;
+    margin-top: 13px;
+    box-sizing: border-box;
 }
 
-nav ul {
-list-style: none;
-margin: 0;
-padding: 0;
+.popover li {
+    list-style-type: none;
 }
 
-nav li {
-display: inline-block;
-margin-left: 20px;
+.popover h2 {
+    margin-bottom: 5px;
 }
 
-nav a {
-color: #FAFAFA;
-text-decoration: none;
-}i
+.popover ul {
+    margin-top: 5px;
+}
+
+.locations .popover ul {
+    padding-left: 20px;
+}
+
+.locations:hover .popover {
+    display: block;
+    padding-left: 18px;
+}
+
+.amenities:hover .popover {
+    display: block;
+}
