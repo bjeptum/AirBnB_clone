@@ -2,14 +2,13 @@ div.container {
   max-width: 1000px;
   margin: 30px auto;
   text-align: center;
-  padding: 100px;
+  padding: 15px;
 }
-.filters {
+section.filters {
     background-color: white;
     height: 70px;
     width: 100%;
     border: 1px solid #DDDDDD;
-    order-radius: 4px;
     position: relative;
 }
 .filters button {
@@ -29,28 +28,10 @@ div.container {
 .filters button:hover {
     opacity: 90%;
 }
-.locations, .amenities {
+.locations {
     position: absolute;
     height: 100%;
     width: 25%;
     border-right: 1px solid #DDDDDD;
     line-height: 100%;
-}
-.locations h3, .amenities h3 {
-    position: absolute;
-    font-weight: 600;
-    left: 50px;
-    top: 0px;
-    margin: 0;
-    font-size: 24px;
-    padding: 50px;
-}
-
-.locations h4, .amenities h4 {
-    position: absolute;
-    font-weight: 400;
-    top: 22px;
-    left: 50px;
-    margin: 10px 0 0 0;
-    font-size: 16px;
 }
