@@ -1,0 +1,34 @@
+.filters {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-top: 20px;
+}
+
+.filters button {
+background-color: #333333;
+color: #FFFFFF;
+border: none;
+border-radius: 5px;
+padding: 10px 20px;
+font-size: 16px;
+cursor: pointer;
+}
+
+.locations, .amenities {
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: flex-start;
+padding: 20px;
+}
+
+.locations h3, .amenities h3 {
+margin: 0;
+font-size: 24px;
+}
+
+.locations h4, .amenities h4 {
+margin: 10px 0 0 0;
+font-size: 16px;
+}
