@@ -73,7 +73,11 @@ div.locations {
 }
 
 .locations .popover ul {
-    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.amenities .popover ul {
+    padding-right: 20px;
 }
 
 .locations:hover .popover {
@@ -83,5 +87,5 @@ div.locations {
 
 .amenities:hover .popover {
     display: block;
-    float: inherit;
+    padding-bottom: 18px;
 }
