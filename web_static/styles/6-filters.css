@@ -72,6 +72,10 @@ div.locations {
     border-bottom: 1px solid #DDDDDD;
 }
 
+.popover li:last-child {
+  border-bottom: none;
+}
+
 .popover h2 {
     margin-bottom: 5px;
 }
