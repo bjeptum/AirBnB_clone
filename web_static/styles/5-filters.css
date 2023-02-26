@@ -24,6 +24,7 @@ section.filters button {
     top: 50%;
     transform: translateY(-50%);
     position: absolute;
+    cursor: pointer;
 }
 section.filters button:hover {
     opacity: 90%;
