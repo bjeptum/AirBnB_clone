@@ -31,12 +31,12 @@ section.filters button:hover {
   }
 .locations, .amenities {
     height: 100%;
-    width: 25%;
+    width: 292px;
     border-right: 1px solid #DDDDDD;
     line-height: 100%;
-    display: inline-block;
     vertical-align: top;
-    text-align: center;
+    float: left;
+    text-align: left;
 }
 
 .locations h3, .amenities h3 {
@@ -50,9 +50,10 @@ section.filters button:hover {
     font-weight: 400;
     font-size: 14px;
     margin: 5px;
-    padding-left: 40px;
+    margin-left: 55px;
     list-style-type: none;
 }
+
 .amenities {
 	border-right: none;
 }
@@ -66,25 +67,30 @@ section.filters button:hover {
     background-color: #FAFAFA;
     width: 292px;
     border: 1px solid #DDDDDD;
+    list-style: none;
 }
 
 .popover li {
     margin: 0;
     padding: 10px;
     cursor: pointer;
-    border-bottom: 1px solid #DDDDDD;
+    list-style: none;
+    float: left;
 }
 
-.popover li:last-child {
-  border-bottom: none;
-}
 
 .popover h2 {
     margin-bottom: 5px;
+    font-size: 16px;
+    float: left;
 }
 
 .popover ul {
     margin-top: 5px;
+}
+
+.popover p {
+    text-indent: 0;
 }
 
 .locations .popover ul {
@@ -103,4 +109,9 @@ section.filters button:hover {
 .amenities:hover .popover {
     display: block;
     padding-bottom: 18px;
+}
+
+.myclass li {
+    float: left;
+    /* padding-right: 120px; */
 }
