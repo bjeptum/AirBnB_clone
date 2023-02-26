@@ -16,6 +16,9 @@
     padding: 20px;
     border: 1px solid #FF5A5F;
     border-radius: 4px;
+    float:inline-end;
+    line-height: 50px;
+    list-style-position: separate;
 
 }
 
