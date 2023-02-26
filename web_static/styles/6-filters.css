@@ -37,22 +37,18 @@ div.locations {
     border-right: 1px solid #DDDDDD;
     line-height: 100%;
 }
-<<<<<<< HEAD
-section.filters h3{
-=======
 .amenities {
     height: 100%;
     width: 25%;
     text-align: left;
 }
 .filters h3{
->>>>>>> 0b45f0a700167ed27f7aad0a2c3010e35d56d48f
     padding-left: 50px;
     padding-top: 10px;
     font-weight: 600;
     margin: 5px;
 }
-section .filters h4{
+.filters h4{
     font-weight: 400;
     font-size: 14px;
     margin: 5px;
