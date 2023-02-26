@@ -11,7 +11,7 @@ section.filters {
     border: 1px solid #DDDDDD;
     position: relative;
 }
-.filters button {
+section.filters button {
     font-size: 18px;
     background-color: #FF5A5F;
     color: #FFFFFF;
@@ -25,25 +25,30 @@ section.filters {
     transform: translateY(-50%);
     position: absolute;
 }
-.filters button:hover {
+section.filters button:hover {
     opacity: 90%;
 }
-div.locations {
-    position: absolute;
+.locations, .amenities {
     height: 100%;
     width: 25%;
     border-right: 1px solid #DDDDDD;
     line-height: 100%;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
 }
-.filters h3{
+.locations h3, .amenities h3 {
     padding-left: 50px;
     padding-top: 10px;
     font-weight: 600;
     margin: 5px;
 }
-.filters h4{
+.locations  h4, .amenities h4 {
     font-weight: 400;
     font-size: 14px;
     margin: 5px;
     padding-left: 40px;
+}
+.amenities {
+	border-right: none;
 }
