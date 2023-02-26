@@ -37,13 +37,13 @@ div.locations {
     border-right: 1px solid #DDDDDD;
     line-height: 100%;
 }
-.filters h3{
+section.filters h3{
     padding-left: 50px;
     padding-top: 10px;
     font-weight: 600;
     margin: 5px;
 }
-.filters h4{
+section .filters h4{
     font-weight: 400;
     font-size: 14px;
     margin: 5px;
