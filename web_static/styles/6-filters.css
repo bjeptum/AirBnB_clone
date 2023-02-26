@@ -47,12 +47,14 @@ div.locations {
     padding-top: 10px;
     font-weight: 600;
     margin: 5px;
+    list-style-type: none;
 }
 .filters h4{
     font-weight: 400;
     font-size: 14px;
     margin: 5px;
     padding-left: 40px;
+    list-style-type: none;
 }
 .popover {
     display: none;
