@@ -2,6 +2,7 @@ div.container {
   max-width: 1000px;
   margin: 30px auto;
   text-align: center;
+  padding: 15px;
 }
 section.filters {
   background-color: white;
@@ -28,34 +29,34 @@ section.filters button {
 section.filters button:hover {
   opacity: 90%;
   }
-div.locations {
-    position: relative;
+.locations, .amenities {
     height: 100%;
     width: 25%;
-    text-align: left;
-    order: o;
     border-right: 1px solid #DDDDDD;
     line-height: 100%;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
 }
-.amenities {
-    height: 100%;
-    width: 25%;
-    text-align: left;
-}
-.filters h3{
+
+.locations h3, .amenities h3 {
     padding-left: 50px;
     padding-top: 10px;
     font-weight: 600;
     margin: 5px;
     list-style-type: none;
 }
-.filters h4{
+.locations  h4, .amenities h4 {
     font-weight: 400;
     font-size: 14px;
     margin: 5px;
     padding-left: 40px;
     list-style-type: none;
 }
+.amenities {
+	border-right: none;
+}
+
 .popover {
     display: none;
     position: absolute;
